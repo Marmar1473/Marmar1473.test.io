@@ -190,16 +190,12 @@
         background: #efefef;
       }
       .option.correct {
-        border: 2px solid var(--correct) !important;
-        background: #f0fff4;
+        border-color: var(--correct);
         color: var(--correct);
-        font-weight: bold;
       }
       .option.wrong {
-        border: 2px solid var(--wrong) !important;
-        background: #fff5f5;
+        border-color: var(--wrong);
         color: var(--wrong);
-        font-weight: bold;
       }
       .nav-buttons {
         margin-top: 32px;
@@ -1739,7 +1735,7 @@
             "На два пальца ниже мечевидного отростка.",
             "На два пальца выше мечевидного отростка.",
           ],
-          correct: 1,
+          correct: 2,
         },
         {
           n: 44,
@@ -2226,7 +2222,7 @@
         });
 
         const answeredCount = Object.keys(state.answers).length;
-        const canFinish = answeredCount >= QUESTIONS.length - 10;
+        const canFinish = answeredCount > 0;
 
         html += `</div></div>
           <div class="nav-buttons">
